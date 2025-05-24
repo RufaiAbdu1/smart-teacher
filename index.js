@@ -29,7 +29,7 @@ app.get('/', (req, res) => {
 app.post('/ask', async (req, res) => {
   const question = req.body.question;
   console.log('Received question:', question);
-
+console.log('OPENROUTER_API_KEY value:', process.env.OPENROUTER_API_KEY ? '[HIDDEN]' : 'MISSING');
   try {
     const response = await fetch('https://openrouter.ai/api/v1/chat/completions', {
       method: 'POST',
